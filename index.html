@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Aplikasi Point of Sale (PoS) offline untuk penjualan, stok, pelanggan, pembayaran, struk, kas/shift, laporan, dan user management." />
+  <title>Point of Sale (PoS)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="toast-root" class="toast-root" aria-live="polite"></div>
+
+  <section id="login-view" class="login-view">
+    <div class="login-card">
+      <div class="brand brand-login">
+        <div class="brand-mark" aria-hidden="true">POS</div>
+        <div>
+          <h1>Point of Sale</h1>
+          <p>Sistem kasir & inventori terintegrasi</p>
+        </div>
+      </div>
+      <form id="login-form" class="stack-lg" autocomplete="off">
+        <div class="field">
+          <label for="login-username">Username</label>
+          <input id="login-username" name="username" value="admin" required />
+        </div>
+        <div class="field">
+          <label for="login-password">Password</label>
+          <input id="login-password" name="password" type="password" value="admin123" required />
+        </div>
+        <button class="btn btn-primary btn-block" type="submit">Masuk ke Aplikasi</button>
+      </form>
+      <div class="demo-credential">
+        <strong>Akun demo</strong>
+        <span>Admin: <code>admin / admin123</code></span>
+        <span>Kasir: <code>kasir / kasir123</code></span>
+      </div>
+    </div>
+  </section>
+
+  <div id="app" class="app-shell hidden">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-head">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">POS</div>
+          <div>
+            <strong>Point of Sale</strong>
+            <small>ERP Lite</small>
+          </div>
+        </div>
+        <button id="sidebar-close" class="icon-btn mobile-only" aria-label="Tutup menu">×</button>
+      </div>
+      <nav id="main-nav" class="nav-list" aria-label="Menu utama"></nav>
+      <div class="sidebar-foot">
+        <div class="user-mini">
+          <span class="avatar" id="user-avatar">A</span>
+          <div>
+            <strong id="sidebar-user-name">Administrator</strong>
+            <small id="sidebar-user-role">Admin</small>
+          </div>
+        </div>
+        <button id="logout-btn" class="btn btn-ghost btn-block">Keluar</button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button id="sidebar-open" class="icon-btn mobile-only" aria-label="Buka menu">☰</button>
+        <div>
+          <h2 id="page-title">Dashboard</h2>
+          <p id="page-subtitle">Ringkasan operasional penjualan hari ini</p>
+        </div>
+        <div class="topbar-actions">
+          <span id="shift-badge" class="badge badge-muted">Shift belum dibuka</span>
+          <button id="quick-pos-btn" class="btn btn-primary">+ Transaksi</button>
+        </div>
+      </header>
+
+      <section id="page-content" class="page-content" tabindex="-1"></section>
+    </main>
+  </div>
+
+  <div id="modal-root"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
