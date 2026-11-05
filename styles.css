@@ -60,6 +60,19 @@ button { cursor: pointer; }
   background: linear-gradient(145deg, var(--navy), #1883d3);
   box-shadow: 0 8px 20px rgba(12, 63, 121, .2);
 }
+/* BRAND LOGO */
+.brand-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* LOGO SIDEBAR */
+.sidebar .brand-logo {
+  width: 40px;
+  height: 40px;
+}
 .demo-credential { margin-top: 20px; border: 1px dashed #bed0e2; background: #f8fbff; border-radius: 12px; padding: 12px 14px; display: grid; gap: 5px; font-size: 13px; color: var(--muted); }
 .demo-credential strong { color: var(--ink); }
 .demo-credential code { color: var(--navy); }
